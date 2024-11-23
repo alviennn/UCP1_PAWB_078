@@ -30,4 +30,15 @@ const bibit = [
 
 router.get("/", (req, res) =>{
   res.send(bibit);
-})
+});
+
+router.post('/', (req, res) => {
+  const bibitbaru ={
+      id: bibit.length +1,
+      nama: req.body.nama,
+      jenis: req.boody.jenis,
+      jumlah: req.body.jumlah
+  }
+  bibit.push(bibitbaru);
+  res.status(201).json(bibitbaru);
+});
