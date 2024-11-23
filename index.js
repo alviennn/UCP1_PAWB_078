@@ -9,6 +9,13 @@ const PORT = 8000;
 app.use(bodyParser.json());
 app.use(express.json());
 
+app.use("/bibit", bibitRoute);
+app.use("/pupuk", pupukRoute);
+app.get("/", (req, res) => {
+    console.log(["GET ROUTE"]);
+    res.send("Data Bibit dan Pupuk");
+});
+
 app.use(bodyParser.json());
 app.listen(PORT, () =>
     console.log(`Server berjalan di port: http://localhost:${PORT}`)
