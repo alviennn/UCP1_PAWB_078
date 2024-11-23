@@ -60,3 +60,14 @@ router.put('/', (req, res) =>{
       updateBibit: bibit[bibitIndex],
   });
 });
+
+router.delete('/:id', (req, res) => { 
+  const bibitIndex = bibit.findIndex(t => t.id === parseInt(req.params.id)); 
+  if (bibitIndex === -1) return res.status(404).json({ message: 'Bibit tidak ditemukan' }); 
+
+  const deleteBibit = bibit.splice(bibitIndex, 1)[0];
+res.status(200).json({ message: `Bibit '${deleteBibit.namabibit}' telah dihapus`}); 
+
+}); 
+
+export default router;
