@@ -27,3 +27,7 @@ const bibit = [
         jumlah: 800
       },
 ]
+
+router.get("/", (req, res) =>{
+  res.send(bibit);
+})
