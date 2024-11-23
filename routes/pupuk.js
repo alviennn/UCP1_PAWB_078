@@ -31,3 +31,14 @@ const pupuk = [
 router.get("/", (req, res) => {
     res.send(pupuk);
 });
+
+router.post('/', (req, res) => { 
+    const pupukBaru = { 
+        id: pupuk.length + 1, 
+        nama: req.body.nama, 
+        jenis: req.body.jenis,
+        stock: req.body.stock
+    }; 
+    pupuk.push(pupukBaru); 
+    res.status(201).json(pupukBaru); 
+});
