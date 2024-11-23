@@ -36,7 +36,8 @@ router.post('/', (req, res) => {
   const bibitbaru ={
       id: bibit.length +1,
       nama: req.body.nama,
-      jenis: req.boody.jenis,
+      kategori: req.boody.kategori
+      ,
       jumlah: req.body.jumlah
   }
   bibit.push(bibitbaru);
@@ -51,7 +52,7 @@ router.put('/', (req, res) =>{
   bibitIndex[bibitIndex] = {
       ...bibit[bibitIndex],
       nama: req.body.nama || bibit[bibitIndex].nama,
-      jenis: req.body.jenis || bibit[bibitIndex].jenis,
+      kategori: req.body.kategori || bibit[bibitIndex].kategori,
       jumlah: req.body.jumlah || bibit[bibitIndex].jumlah,
   };
 
