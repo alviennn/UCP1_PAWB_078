@@ -5,3 +5,6 @@ import pupukRoute from "./routes/pupuk.js";
 
 const app = express();
 const PORT = 8000;
+
+app.use(bodyParser.json());
+app.use(express.json());
